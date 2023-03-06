@@ -1,0 +1,12 @@
+body{
+    background-image: linear-gradient(rgb(106, 133, 182), rgb(186, 200, 224));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-body{
+    background: none;
+    width: 500px;
+}

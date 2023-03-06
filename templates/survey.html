@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container" id="form_body">
+        <form action="/submit_data" method="post">
+            <div class="form-group mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="form-group mb-3">
+                <label for="fav_framework" class="form-label">Favorite framework</label>
+                <select name="fav_framework" class="form-select" id="fav_framework">
+                    <option value="null"></option>
+                    <option value="react">React</option>
+                    <option value="flask">Flask</option>
+                    <option value="vue">Vue.js</option>
+                    <option value="django">Django 2.0</option>
+                    <option value="Angular">Angular</option>
+                </select>
+            </div>
+            <label class="form-label">Desired Field</label>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="desired_field" id="desired_field" value="frond end developer" checked>
+                <label for="desired_field" class="form-check-label">Front End Developer</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="desired_field" id="back_end_dev" value="back end developer">
+                <label for="back_end_dev" class="form-check-label">Back End Developer</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="radio" class="form-check-input" name="desired_field" id="full_stack_dev" value="full stack developer">
+                <label for="full_stack_dev" class="form-check-label">Full Stack Developer</label>
+            </div>
+            <label class="form-labbel" style="display: block;">Desired Job Type (select all that apply)</label>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" name="desired_job" id="big_tech" value="big_tech">
+                <label for="big_tech">Big Tech</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" name="desired_job" id="startup" value="startup">
+                <label for="startup">Startup</label>
+            </div>
+            <div class="form-check form-check-inline mb-3">
+                <input type="checkbox" name="desired_job" id="freelance" value="freelance">
+                <label for="freelance">Freelance</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" name="desired_job" id="own_businuess" value="own_businuess">
+                <label for="own_businuess">Own a Businuess</label>
+            </div>
+            <div class="form-group mb-3">
+                <label for="comments" class="form-label">Comments</label>
+                <textarea name="comments" id="comments" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <input type="submit" class="btn btn-dark">
+        </form>
+    </div>
+</body>
+</html>
